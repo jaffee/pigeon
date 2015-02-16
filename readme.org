@@ -1,0 +1,15 @@
+* Overview
+
+Pigeon is a simple webapp which listens for [[https://gitlab.com/gitlab-org/gitlab-ce/blob/master/doc/web_hooks/web_hooks.md][gitlab webhooks]], and then
+POSTs to JIRA's API with comments on any issues referenced in the
+pushed commits.
+
+* Configuration
+Copy pigeon/config.template.py to pigeon/config.py and fill it in with
+values appropriate to your setup. You'll probably want to create a
+JIRA user specifically for use with this application - I called mine
+gitlab.
+
+You need to register the URL at which you intend to run this service
+with gitlab. The path to use is "/push". Settings > Web Hooks (within
+whatever project you want to enable the functionality for)

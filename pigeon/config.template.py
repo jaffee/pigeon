@@ -1,0 +1,5 @@
+JIRA_URL = "http://jira.mycompany.com"
+JIRA_USER = "jira_user_for_gitlab"
+JIRA_PASS = "password"
+# TODO pull these from JIRA dynamically
+JIRA_PROJECTS = ["PRJ", "ID", "LST"]
