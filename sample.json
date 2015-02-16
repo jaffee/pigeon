@@ -1,0 +1,47 @@
+{
+    "after": "b19e6b600a1cc70934bebb1fda75bb20b17ff729",
+    "before": "80500142bfb46eb8e520f654ba7d790e712b813a",
+    "commits": [
+        {
+            "author": {
+                "email": "john@inittech.com",
+                "name": "johnsmith"
+            },
+            "id": "b19e6b600a1cc70934bebb1fda75bb20b17ff729",
+            "message": "some message modified commit for testing gitlab integration)",
+            "timestamp": "2015-01-21T22:44:39+00:00",
+            "url": "http://gitlab.inittech.com/inittech/inittech/commit/1b96eb600a1cc79034ebb1bfad75bb201b7f7f92"
+        },
+        {
+            "author": {
+                "email": "blamport@inittech.com",
+                "name": "Rob Lamport"
+            },
+            "id": "ad7dc895fc0dc85ad84cda36a8883bf372114d72",
+            "message": "fix reference to tps report (modified commit for testing gitlab integration)",
+            "timestamp": "2015-01-21T22:14:06+00:00",
+            "url": "http://gitlab.inittech.com/inittech/inittech/commit/f7dcdc895f50dc88adc4ad368a88b3f327114d22"
+        },
+        {
+            "author": {
+                "email": "blamport@inittech.com",
+                "name": "Rob Lamport"
+            },
+            "id": "80500142bfb46eb8e520f654ba7d790e712b813a",
+            "message": "Merge branch 'master' of aserver.inittech.com:inittech (Note: modified commit for testing gitlab integration)",
+            "timestamp": "2015-01-21T22:44:03+00:00",
+            "url": "http://gitlab.inittech.com/inittech/inittech/commit/80500142bfb46eb8e520f654ba7d790e712b813a"
+        }
+    ],
+    "project_id": 2,
+    "ref": "refs/heads/master",
+    "repository": {
+        "description": "",
+        "homepage": "http://gitlab.inittech.com/inittech/inittech",
+        "name": "inittech",
+        "url": "git@gitlab.inittech.com:inittech/inittech.git"
+    },
+    "total_commits_count": 3,
+    "user_id": 12,
+    "user_name": "Ron Swanson"
+}
