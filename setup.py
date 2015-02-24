@@ -8,4 +8,6 @@ setup(
 	'Flask',
         'requests',
 	],
+    packages=['pigeon'],
+    scripts=['runpigeon.py'],
 )
