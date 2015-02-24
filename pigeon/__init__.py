@@ -1,5 +1,5 @@
 from flask import Flask
 app = Flask(__name__, instance_relative_config=True)
-app.config.from_object("pigeon.config")
+app.config.from_envvar("PIGEON_CONFIG")
 
 import pigeon.views
