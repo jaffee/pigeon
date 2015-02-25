@@ -1,9 +1,14 @@
 import requests
 import json
 from pprint import pprint
+import sys
 
-f = open("sample.json", 'r')
+if len(sys.argv) > 1:
+    fname = sys.argv[1]
+else:
+    fname = "sample.json"
 
+f = open(fname, 'r')
 
 r = requests.post("http://localhost:5654/push", data=f.read())
 
