@@ -30,8 +30,7 @@ def new_push():
 
     for commit in data.get('commits', []):
         issues = get_message_issues(JIRA_PROJECTS, commit.get('message', ""))
-        comment = build_comment(data, commit)
-        post_comment(comment, issues)
+        post_comment(data, commit, issues)
 
     return ""
 
@@ -42,8 +41,15 @@ def build_comment(data, commit):
     return COMMENT_TEMPLATE.format(**commit)
 
 
-def post_comment(body, issues):
+def post_comment(data, commit, issues):
     for issue in issues:
+        existing_comments = get_existing_comments(issue)
+        for comment_body in existing_comments:
+            if commit['message'] in comment_body:
+                print "skipping commit: %s" % commit
+                return  # Don't post this commit as it (or one with the same message already has been posted)
+        body = build_comment(data, commit)
+
         data = deepcopy(comment_json)
         data["body"] = body
         resp = requests.post(ISSUE_COMMENT_URL.format(issueIdOrKey=issue),
@@ -52,6 +58,12 @@ def post_comment(body, issues):
                              headers={'content-type': 'application/json'})
         print resp
         # TODO: check response and email someone or something if it fails
+
+
+def get_existing_comments(issue):
+    r = requests.get(ISSUE_COMMENT_URL.format(issueIdOrKey=issue), auth=(USER, PASS))
+    comment_list = r.json()['comments']
+    return map(lambda c: c['body'], comment_list)
 
 
 def get_message_issues(projects, msg):
