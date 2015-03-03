@@ -12,7 +12,7 @@ PASS = app.config['JIRA_PASS']
 
 ISSUE_COMMENT_URL = JIRA_URL + "/rest/api/2/issue/{issueIdOrKey}/comment"
 
-COMMENT_TEMPLATE = """{author_name} just referenced this issue in a commit.
+COMMENT_TEMPLATE = """{author_name} referenced this issue in a commit.
 
 {message}
 
