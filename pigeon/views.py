@@ -29,7 +29,10 @@ def new_push():
     data = json.loads(request.data)
 
     for commit in data.get('commits', []):
-        issues = get_message_issues(JIRA_PROJECTS, commit.get('message', ""))
+        # skip merge commits
+        if commit.get('message', "").startswith('Merge branch'):
+            continue
+        issues = set(get_message_issues(JIRA_PROJECTS, commit.get('message', "")))
         post_comment(data, commit, issues)
 
     return ""
