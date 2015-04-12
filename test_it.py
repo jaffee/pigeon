@@ -3,6 +3,8 @@ import json
 from pprint import pprint
 import sys
 
+print sys.argv
+
 if len(sys.argv) > 1:
     fname = sys.argv[1]
 else:
@@ -10,8 +12,9 @@ else:
 
 f = open(fname, 'r')
 
-r = requests.post("http://localhost:5654/push", data=f.read())
+resp = requests.post("http://localhost:5654/push", data=f.read())
 
-print r
-pprint(json.loads(r.text))
+
+print resp
+pprint(json.loads(resp.text))
 # import ipdb; ipdb.set_trace()
